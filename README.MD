@@ -33,5 +33,23 @@ exit();
 
 ![Form Validation - GIF](/formValidation.gif)
 
-
 ********************************************
+
+<hr/>
+
+**********SESSION_PHP**********
+Quando fizemos o redirecionamento para a página index, caso o nosso formulário fosse enviado vazio, usamos um header``('Location route.php')``
+e um ``exit()``; Porém, a página simplesmente era recarregada, agora, com o session, podemos mostrar um aviso caso o usuário tente enviar com formulários vazios.
+
+Para começar:
+Chamar o ``session_start()``  em cada página que vai ser usado, no nosso caso no index e em received, após iss onde nos fizemos a rota que mostra o usuário q foi adiciondo e para onde a pagina vai mandar caso o formulário venha vazio, devemos inserir `` $_SESSION['title'] = "e inserir um aviso";``. Para acessar em outra página, podes fazer o seguinte código: 
+
+````
+if($_SESSION['warn']) {
+    echo $_SESSION['warn'];
+    echo $_SESSION['warn'] = '';
+}
+````
+
+
+*******************************

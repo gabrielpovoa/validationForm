@@ -8,6 +8,9 @@ $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
 if ($name && $email && $age){
 
+    $expireIn = time() + (86400*30);
+    setcookie('name', $name, $expireIn);
+
     echo "<h2>RECEIVED INFORMATIONS</h2> <br>";
 
     echo "Nome: ". ucfirst($name). "<br>";

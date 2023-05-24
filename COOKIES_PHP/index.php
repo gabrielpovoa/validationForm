@@ -40,6 +40,8 @@ if($_SESSION['warn']) {
 
 </style>
 
+<a href="./delete.php" style="padding: 2rem 5%;">Delete Cookie</a>
+
 <form method="POST" action="receveid.php">
     <label>
         Name 
